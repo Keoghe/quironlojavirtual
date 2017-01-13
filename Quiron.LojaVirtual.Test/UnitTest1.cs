@@ -9,6 +9,6 @@ namespace Quiron.LojaVirtual.Test
         [TestMethod]
         public void TestMethod1()
         {
-        }
+        } 
     }
 }
