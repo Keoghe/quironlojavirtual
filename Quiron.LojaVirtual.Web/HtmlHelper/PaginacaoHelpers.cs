@@ -18,7 +18,7 @@ namespace Quiron.LojaVirtual.Web.HtmlHelpers
 
             StringBuilder resultado = new StringBuilder();
 
-            for (int i = 0; i < paginacao.TotalPagina; i++)
+            for (int i = 1; i <= paginacao.TotalPagina; i++)
             {
                 //Adicionando a Tag "a"
                 TagBuilder tag = new TagBuilder("a");
@@ -29,8 +29,8 @@ namespace Quiron.LojaVirtual.Web.HtmlHelpers
 
                 if(i == paginacao.PaginaAtual)
                 {
-                    tag.AddCssClass("Selected");
-                    tag.AddCssClass("btn.primary");
+                    tag.AddCssClass("selected");
+                    tag.AddCssClass("btn-primary");
                 }
                 tag.AddCssClass("btn btn-default");
                 //Adicionando a linha após inclusão de parâmetros
