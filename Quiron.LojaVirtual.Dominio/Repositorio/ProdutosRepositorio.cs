@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Quiron.LojaVirtual.Dominio.Entidade;
+using Quiron.LojaVirtual.Dominio.Entidades;
 
 namespace Quiron.LojaVirtual.Dominio.Repositorio
 {

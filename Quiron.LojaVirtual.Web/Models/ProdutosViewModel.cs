@@ -1,4 +1,4 @@
-﻿using Quiron.LojaVirtual.Dominio.Entidade;
+﻿using Quiron.LojaVirtual.Dominio.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;

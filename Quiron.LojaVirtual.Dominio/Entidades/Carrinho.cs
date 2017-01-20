@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Quiron.LojaVirtual.Dominio.Entidade
+namespace Quiron.LojaVirtual.Dominio.Entidades
 {
     public class Carrinho
     {
@@ -25,7 +25,7 @@ namespace Quiron.LojaVirtual.Dominio.Entidade
             }
             else
             {
-                item.Quantidade = quantidade;
+                item.Quantidade += quantidade;
             }
 
 
