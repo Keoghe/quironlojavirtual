@@ -15,11 +15,15 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
         [Required(ErrorMessage = "Digite a descrição do produto")]
         public string Descricao { get; set; }
 
-        [Required(ErrorMessage ="Digite o valor")]
-        [Range(0.10, double.MaxValue, ErrorMessage ="Valor Inválido")]
+        [Required(ErrorMessage = "Digite o valor")]
+        [Range(0.10, double.MaxValue, ErrorMessage = "Valor Inválido")]
         public decimal Preco { get; set; }
 
         [Required(ErrorMessage = "Digite a categoria do produto")]
-        public string Categoria { get; set; } 
+        public string Categoria { get; set; }
+        
+        public byte[] Imagem { get; set; }
+        
+        public string ImagemMimeType { get; set; }
     }
 }

@@ -14,11 +14,14 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
     {
 
         public DbSet<Produto> Produtos { get; set; }
-        //Sobrescrevendo métodos
+        public DbSet<Administrador> Administradores { get; set; }
+
+        //Sobrescrevendo métodos - Aqui é feito o mapeamento das tabelhas no modelbuilder
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Entity<Produto>().ToTable("Produtos");
+            modelBuilder.Entity<Administrador>().ToTable("Administradores");
         }
 
     }
