@@ -36,6 +36,12 @@ summary {
   display: block;
 }
 
+
+a.deco-none{
+    color:#000000;
+    text-decoration: none
+}
+
 audio,
 canvas,
 video {

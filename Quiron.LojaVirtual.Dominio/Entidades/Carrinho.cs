@@ -25,7 +25,7 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
             }
             else
             {
-                item.Quantidade += quantidade;
+                item.Quantidade = quantidade;
             }
 
 
@@ -50,7 +50,7 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
         }
 
         //itens do carrinho
-        public IEnumerable<ItemCarrinho> itensCarrinho
+        public IEnumerable<ItemCarrinho> ItensCarrinho
         {
             get { return _itemCarrinho; }
         }

@@ -33,7 +33,7 @@ namespace Quiron.LojaVirtual.Test
             carrinho.AdicionarItem(produto2, 3);
 
             //Act
-            ItemCarrinho[] itens = carrinho.itensCarrinho.ToArray();
+            ItemCarrinho[] itens = carrinho.ItensCarrinho.ToArray();
 
             //Assert
             Assert.AreEqual(itens.Length, 2);
@@ -67,7 +67,7 @@ namespace Quiron.LojaVirtual.Test
             carrinho.AdicionarItem(produto1, 10);
 
             //Act
-            ItemCarrinho[] resultado = carrinho.itensCarrinho.OrderBy(c => c.Produto.ProdutoID).ToArray();
+            ItemCarrinho[] resultado = carrinho.ItensCarrinho.OrderBy(c => c.Produto.ProdutoID).ToArray();
 
             Assert.AreEqual(resultado.Length, 2);
             Assert.AreEqual(resultado[0].Quantidade, 11);
@@ -106,9 +106,9 @@ namespace Quiron.LojaVirtual.Test
 
             carrinho.RemoverItem(produto2);
 
-            Assert.AreEqual(carrinho.itensCarrinho.Where(c => c.Produto == produto2).Count(), 0);
+            Assert.AreEqual(carrinho.ItensCarrinho.Where(c => c.Produto == produto2).Count(), 0);
 
-            Assert.AreEqual(carrinho.itensCarrinho.Count(), 2);
+            Assert.AreEqual(carrinho.ItensCarrinho.Count(), 2);
         }
 
         [TestMethod]
@@ -169,7 +169,7 @@ namespace Quiron.LojaVirtual.Test
             carrinho.LimparCarrinho();
 
             //Assert
-            Assert.AreEqual(carrinho.itensCarrinho.Count(), 0);
+            Assert.AreEqual(carrinho.ItensCarrinho.Count(), 0);
         }
     }    
 }

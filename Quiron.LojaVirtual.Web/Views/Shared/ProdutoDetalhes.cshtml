@@ -1,26 +1,68 @@
 ﻿@model Quiron.LojaVirtual.Dominio.Entidades.Produto
 
+
+
+
 <div class="well">
-
-
-    @if(Model.Imagem != null)
+    @if (Model.Imagem != null)
     {
-        <div class="pull-left" style="margin-right: 10px">
-            <img class="img-thumbnail" width= "120" height="120" src="@Url.Action("ObterImagem","Vitrine", new { Model.ProdutoID})"/>
+        <div class="row">
+            <div class="pull-left" style="margin-right: 10px">
+                <img class="img-thumbnail" width="120" height="120" src="@Url.Action("ObterImagem","Vitrine", new { Model.ProdutoID})" />
+            </div>
         </div>
-            
-        
+
     }
 
-    <h3><strong>@Model.Nome</strong></h3>
-    <h3><span class="pull-right label label-primary">@Model.Preco.ToString("c")</span></h3>
-    @using (Html.BeginForm("Adicionar", "Carrinho"))
-    {
-        <div class="pull-right">
-            @Html.HiddenFor(x => x.ProdutoID)
-            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-            <input type="submit" class="btn btn-success" value="Comprar"/>
-        </div>
-    }
-    <h3><span class="lead">@Model.Descricao</span></h3>
+
+    <div class="row">
+        <h4>
+            @Html.ActionLink(Model.Nome, "Detalhes", "Vitrine", new { id = Model.ProdutoID, produto = Model.Nome.ToSeoUrl() }, new { @class = "deco-none" })
+            <br />
+            <span class="pull-right label label-primary">@Model.Preco.ToString("c")</span>
+        </h4>
+    </div>
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*<div class="well">
+
+            ------------- PRIMEIRA VERSÃO -------------
+
+            @if(Model.Imagem != null)
+            {
+                <div class="pull-left" style="margin-right: 10px">
+                    <img class="img-thumbnail" width= "120" height="120" src="@Url.Action("ObterImagem","Vitrine", new { Model.ProdutoID})"/>
+                </div>
+
+
+            }
+
+            <h3><strong>@Model.Nome</strong></h3>
+            <h3><span class="pull-right label label-primary">@Model.Preco.ToString("c")</span></h3>
+
+             @using (Html.BeginForm("Adicionar", "Carrinho"))
+            {
+                <div class="pull-right">
+                    @Html.HiddenFor(x => x.ProdutoID)
+                    @Html.Hidden("quantidade", 1)
+                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                    <input type="submit" class="btn btn-success" value="Comprar"/>
+                </div>
+            }
+            <h3><span class="lead">@Model.Descricao</span></h3>
+
+        </div>*@

@@ -31,7 +31,7 @@ namespace Quiron.LojaVirtual.Web.Controllers
         }
 
         // GET: Carrinho
-        public RedirectToRouteResult Adicionar(Carrinho carrinho,int produtoId, string returnUrl)
+        public RedirectToRouteResult Adicionar(Carrinho carrinho,int produtoId, int quantidade, string returnUrl)
         {
             _repositorio = new ProdutosRepositorio();
 
@@ -40,7 +40,7 @@ namespace Quiron.LojaVirtual.Web.Controllers
 
             if (produto != null)
             {
-                carrinho.AdicionarItem(produto, 1);
+                carrinho.AdicionarItem(produto, quantidade);
             }
 
             return RedirectToAction("Index", new { returnUrl });
@@ -91,7 +91,7 @@ namespace Quiron.LojaVirtual.Web.Controllers
 
             EmailPedido emailPedido = new EmailPedido(email);
 
-            if (!carrinho.itensCarrinho.Any())
+            if (!carrinho.ItensCarrinho.Any())
             {
                 ModelState.AddModelError("", "Não foi possivel concluir o pedido, seu carrinho está vazio!");
             }

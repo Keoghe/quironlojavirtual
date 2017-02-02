@@ -38,7 +38,7 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
                 .AppendLine("-------------")
                 .AppendLine("Itens");
 
-                foreach (var item in carrinho.itensCarrinho)
+                foreach (var item in carrinho.ItensCarrinho)
                 {
                     var subtotal = item.Produto.Preco * item.Quantidade;
                     body.AppendFormat("{0} x {1} (subtotal: {2:c}", 

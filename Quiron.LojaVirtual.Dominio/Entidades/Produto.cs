@@ -14,7 +14,7 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
         [DataType(DataType.MultilineText)]
         [Required(ErrorMessage = "Digite a descrição do produto")]
         public string Descricao { get; set; }
-
+        
         [Required(ErrorMessage = "Digite o valor")]
         [Range(0.10, double.MaxValue, ErrorMessage = "Valor Inválido")]
         public decimal Preco { get; set; }

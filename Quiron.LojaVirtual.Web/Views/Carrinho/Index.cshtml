@@ -7,6 +7,10 @@
     #carrinhoTable td{
         vertical-align:middle;
     }
+    .quantidade {
+
+    width: 50px;
+}
 </style>
 
 <h2>Seu Carrinho</h2>
@@ -21,13 +25,25 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Carrinho.itensCarrinho)
+        @foreach (var item in Model.Carrinho.ItensCarrinho)
         {
             <tr>
-                <td class="text-center">@item.Quantidade</td>
+                @*<td class="text-center">@item.Quantidade</td>*@
                 <td class="text-center">@item.Produto.Nome</td>
                 <td class="text-right">@item.Produto.Preco.ToString("c")</td>
                 <td class="text-right">@((@item.Quantidade * item.Produto.Preco).ToString("c"))</td>
+                
+                
+                <td>
+                    @using (Html.BeginForm("Adicionar", "Carrinho"))
+                    {
+                        @Html.Hidden("ProdutoID", item.Produto.ProdutoID);
+                        @Html.HiddenFor(x => x.ReturnUrl);
+                        @Html.TextBox("quantidade", item.Quantidade, new { @class = "quantidade", type = "number", min = "1", max = "10" });
+                        <input class="btn btn-sm btn-danger" type="submit" value="Atualizar" />
+                    }
+                </td>
+                
                 <td>
                     @using (Html.BeginForm("Remover", "Carrinho"))
                     {
