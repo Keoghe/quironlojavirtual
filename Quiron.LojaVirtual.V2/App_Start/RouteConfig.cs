@@ -11,15 +11,21 @@ namespace Quiron.LojaVirtual.V2
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            //agora é possível utilizar annotation da
+            //agora é possível utilizar annotation da route
             routes.MapMvcAttributeRoutes();
 
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "BuscaProduto",
+                url: "busca/{termo}",
+                defaults: new { controller = "Nav", action = "ConsultarProduto", termo = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Nav", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

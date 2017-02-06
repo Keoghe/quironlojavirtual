@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiron.LojaVirtual.Web", "Q
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiron.LojaVirtual.Test", "Quiron.LojaVirtual.Test\Quiron.LojaVirtual.Test.csproj", "{2BFFF58F-4B5D-4092-8B7F-C55BB3AB1F8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiron.LojaVirtual.V2", "Quiron.LojaVirtual.V2\Quiron.LojaVirtual.V2.csproj", "{6081F818-51E9-43FB-A4CA-6DC40A29B74B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiron.LojaVirtual.Web.V2", "Quiron.LojaVirtual.V2\Quiron.LojaVirtual.Web.V2.csproj", "{6081F818-51E9-43FB-A4CA-6DC40A29B74B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

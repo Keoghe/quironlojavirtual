@@ -33,12 +33,15 @@ namespace Quiron.LojaVirtual.V2
                 "~/Content/sm-mint/sm-mint.css"
                 ));
 
-            bundles.Add(new ScriptBundle("~/Script/startmenus").Include(
+            bundles.Add(new ScriptBundle("~/Scripts/startmenus").Include(
                 "~/Scripts/jquery.smartmenus.js"
                 ));
 
-            bundles.Add(new ScriptBundle("~/Script/jsprojetos").Include(
+            bundles.Add(new ScriptBundle("~/Scripts/jsprojetos").Include(
                 "~/Scripts/menu.js"
+                ));
+            bundles.Add(new ScriptBundle("~/Scripts/navgoco").Include(
+                "~/js/jquery.navgoco.js"
                 ));
 
             BundleTable.EnableOptimizations = false;

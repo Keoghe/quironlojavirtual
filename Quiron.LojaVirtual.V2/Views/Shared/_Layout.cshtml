@@ -58,6 +58,7 @@
                            data-url="@Url.Action("Resumo", "Carrinho")">
 
                         </a>
+                        <a href="@Url.Action("ConsultarProduto", "Nav")">Meus pedidos</a>
                     </div>
                 </div>
             </div>
@@ -71,24 +72,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12">
-                   @* @using (Html.BeginRouteForm("BuscaProduto", FormMethod.Get))*@
-                    @*  {*@
+                    @using (Html.BeginRouteForm("BuscaProduto", FormMethod.Get))
+                      {
                         <div class="input-group">
                             @Html.TextBox("termo", null, new { @class = "form-control", placeholder = "Clique aqui e faça sua busca" })
                             <span class="input-group-btn">
-                                <button type="submit" class="btn btn-danger">Ok</button>
+                                <button type="submit" class="btn btn-danger">Ok</button>                                
                             </span>
                         </div>
-                    @* } *@
+                     } 
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                @Html.Partial("_Marcas")
-            </div>
-        </div>
+   
     </div>
     <!-- Logo & Navigation ends -->
     <!-- Page title -->
@@ -172,8 +169,10 @@
 
     <!-- Javascript files -->
     @Scripts.Render("~/js")
-    @Scripts.Render("~/Script/startmenus")
-    @Scripts.Render("~/Script/jsprojetos")
+    @Scripts.Render("~/Scripts/startmenus")
+    @Scripts.Render("~/Scripts/jsprojetos")
+    @Scripts.Render("~/Scripts/navgoco")
+    
 
 
     @RenderSection("scripts", required: false)

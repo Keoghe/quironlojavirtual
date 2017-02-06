@@ -25,8 +25,8 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
         public DbSet<Grupo> Grupos { get; set; }
         public DbSet<Marca> Marcas { get; set; }
         public DbSet<Modalidade> Modalidades { get; set; }
-
         public DbSet<ProdutoVitrine> ProdutoVitrine{ get; set; }
+        public DbSet<SubGrupo> SubGrupos { get; set; }
 
         //Sobrescrevendo métodos - Aqui é feito o mapeamento das tabelhas no modelbuilder
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

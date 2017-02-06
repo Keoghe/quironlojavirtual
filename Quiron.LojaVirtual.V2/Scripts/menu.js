@@ -4,7 +4,7 @@ $(function () {
 
     $('#main-menu').smartmenus();
     /* Ecommerce sidebar */
-   // $('.sidey .nav').navgoco();
+    $('.sidey .nav').navgoco();
     app.iniciarlizar();
 });
 

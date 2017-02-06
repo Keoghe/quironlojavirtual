@@ -13,9 +13,10 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
         private readonly EfDbContext _context = new EfDbContext();
 
         public List<ProdutoVitrine> ObterProdutoVitrine(string categoria = null, string genero = null, 
-                                                        string grupo = null, string subgruno = null, 
+                                                        string grupo = null, string subgrupo = null, 
                                                         string linha = null, string marca = null,
-                                                        string modalidade = null)
+                                                        string modalidade = null,
+                                                        string busca = null)
         {
             var query = from p in _context.ProdutoVitrine select p;
 
@@ -44,14 +45,21 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
                 query = query.Where(p => p.MarcaCodigo == marca);
             }
 
-            if (!string.IsNullOrEmpty(subgruno))
+            if (!string.IsNullOrEmpty(subgrupo))
             {
-                query = query.Where(p => p.SubGrupoCodigo == subgruno);
+                query = query.Where(p => p.SubGrupoCodigo == subgrupo);
             }
 
             if (!string.IsNullOrEmpty(modalidade))
             {
                 query = query.Where(p => p.ModalidadeCodigo == modalidade);
+            }
+
+            if (!string.IsNullOrEmpty(busca))
+            {
+                //query = query.Where(p => p.ProdutoDescricao.StartsWith(busca));
+                //query = query.Where(p => p.ProdutoDescricao.EndsWith(busca));
+                query = query.Where(p => p.ProdutoDescricao.Contains(busca));
             }
 
             query = query.OrderBy(p => Guid.NewGuid());

@@ -1,0 +1,16 @@
+﻿@using Quiron.LojaVirtual.V2.Models
+
+@model CategoriaSubGruposViewModel
+
+@foreach (var item in Model.subGrupos)
+{
+    <li>
+        @Html.ActionLink(@item.SubGrupoDescricao, "ObterCategoriaSubGrupos",
+        new
+        {
+            categoriaCodigo = @Model.Categoria,
+            subGrupoCodigo = @item.SubGrupoCodigo,
+            subGrupoDescricao = @item.SubGrupoDescricao.ToSeoUrl()
+        })
+    </li>
+}
